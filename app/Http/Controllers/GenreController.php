@@ -9,9 +9,10 @@ class GenreController extends Controller
 {
     //
     public function index() {
-        $genre = new Genre();
+        $genres = Genre::all();
+        
         return view('genres', [
-            'genres' => $genre->getAll()
+            'genres' => $genres
         ]);
     }
 }

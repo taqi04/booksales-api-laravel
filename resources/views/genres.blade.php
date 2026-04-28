@@ -10,6 +10,7 @@
 <ul>
     @foreach($genres as $g)
         <li>{{ $g['name'] }}</li>
+        <li>{{ $g['description'] }}</li>
     @endforeach
 </ul>
 </body>

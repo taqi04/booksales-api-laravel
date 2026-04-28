@@ -12,12 +12,7 @@ class BookController extends Controller
 {
     //
     public function index() {
-         $genre = new Genre();
-        $author = new Author();
-
-         return view('books', [
-            'genres' => $genre->getAll(),
-            'authors' => $author->getAll()
-        ]);
+        $books = Book::with('author')->get();
+        return view('books', compact('books'));
     }
 }

@@ -6,17 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello world</h1>
-    <br>
-    <p>selamat datang di toko booksales</p>
+    <h1>Daftar Buku</h1>
 
-    @foreach ($books as $item)
-    <ul>
-        <li>{{ $item['title']}}</li>
-        <li>{{ $item['description']}}</li>
-        <li>{{ $item['stock']}}</li>
-        <li>{{ $item['price']}}</li>
-    </ul>
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Judul</th>
+        <th>Author</th>
+        <th>Harga</th>
+    </tr>
+
+    @foreach($books as $b)
+    <tr>
+        <td>{{ $b->title }}</td>
+        <td>{{ $b->author->name }}</td>
+        <td>{{ $b->price }}</td>
+    </tr>
     @endforeach
 </body>
 </html>
